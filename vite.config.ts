@@ -4,6 +4,6 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   return {
     plugins: [react()],
-    server: { proxy: { '/api': { target: env.RUSTY_ROM_API || 'http://127.0.0.1:3000', changeOrigin: true } } },
+    server: { port: 5174, strictPort: true, proxy: { '/api': { target: env.RUSTY_ROM_API || 'http://127.0.0.1:4378', changeOrigin: true } } },
   };
 });
